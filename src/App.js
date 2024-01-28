@@ -4,14 +4,21 @@ import AboutLittleLemon from "./AboutLittleLemon";
 import Contact from "./Contact";
 import CurrentTime from "./CurrentTime";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import WorkDay from "./WorkDay";
+import logo from "./assets/images/logo.png"
 
 function App() {
+
+  const randomImgUrl = "https://picsum.photos/400/265"
+
   return (
     <BrowserRouter>
       <div> 
         
         <nav>
+        <img src={logo} alt="a logo image" width={"35px"} height={"35px"} />
+        <img src={require("./assets/images/logo.png")} alt="a logo image" width={"35px"} height={"35px"} />
+        <img src={randomImgUrl} alt="a logo image" width={"35px"} height={"35px"} />
+
           <Link to="/" className="nav-item">Homepage</Link>
           <Link to="/about" className="nav-item">About Little Lemon</Link>
           <Link to="/contact" className="nav-item">Contact</Link>
@@ -25,9 +32,14 @@ function App() {
           <Route path="/currenttime" element={<CurrentTime />}></Route>
         </Routes>
 
-        
+
+
       </div>
+
+
     </BrowserRouter>
+
+    
   );
 };
 
